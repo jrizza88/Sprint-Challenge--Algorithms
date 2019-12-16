@@ -63,11 +63,7 @@ The point of the above two instance is to keep halving the midpoint until you re
 
 The run time complexity would be O(log n) because it would keep minimizing/reducing the amount of times that you have to drop the egg. 
 
-Pseudo code version:
-``` 
 
-
-pseudocode: 
 
 
 

@@ -7,4 +7,23 @@ def count_th(word):
     
     # TBC
     
-    pass
+    # pass
+
+    if word == "":
+        print('word', word)
+        print(0)
+        return 0
+
+    elif word == "th":
+        return 1
+
+    # else: 
+
+
+    return word
+
+
+print(count_th(''))
+print(count_th('th'))
+
+
