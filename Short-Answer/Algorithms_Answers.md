@@ -31,7 +31,7 @@ while (0 < 2 * 2 * 2):
 This same concept could work for any number of items. Due to the the linear growth of this, this shows a linear increase in run time as the input size grows. 
 
 b) This would be O(n log n)
-
+It is running only one loop and just half of the n for every loop.
 ```
   sum = 0 
     for i in range(n):   
