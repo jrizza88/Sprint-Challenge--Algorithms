@@ -2,7 +2,7 @@
 
 ## Exercise I
 
-a)  It's a runtime of log(n) or linear time. 
+a)  It's a runtime of O(n) or linear time. 
 
 ```python
   a = 0 ## o(1)
@@ -30,7 +30,7 @@ while (0 < 2 * 2 * 2):
 ```
 This same concept could work for any number of items. Due to the the linear growth of this, this shows a linear increase in run time as the input size grows. 
 
-b) This would be O(log n)
+b) This would be O(n log n)
 
 ```
   sum = 0 

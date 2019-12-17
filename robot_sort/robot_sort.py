@@ -98,7 +98,7 @@ class SortingRobot:
         """
         # Fill this out
 
-        # check if robot is on. invoke the light_is_on() method to turn robot on
+        # check if robot is on. invoke the set_is_on() method to turn robot on
         self.set_light_on()
 
         # while true, run the robot program!
@@ -127,7 +127,7 @@ class SortingRobot:
                 # if the robot moves left, checks items to see if the robot should continue operating items to the left. 
                 self.move_left()
                 ## while checking to the left, it checks the item, if the robot can switch the item, it switches it.
-                if self.compare_item() == 1:
+                if self.compare_item() == None:
                     # item gets swapped to the left
                     self.swap_item()
                     # program will continue
@@ -163,6 +163,7 @@ if __name__ == "__main__":
     robot = SortingRobot(l)
 
     robot.sort()
-    print(robot._list)
+    print(f'l: {l}')
+    # print(robot._list)
 
 
