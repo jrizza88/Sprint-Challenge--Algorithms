@@ -97,16 +97,73 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+
+        # check if robot is on. invoke the set_is_on() method to turn robot on
+        self.set_light_on()
+
+        # while true, run the robot program!
+        while self.light_is_on():
+            # begin comparing the numbers (items in this case) to each other.
+            self.compare_item()
+
+            # after the item is compared, move the robot to the left or right
+            ## this will be done by comparing while loops.
+
+            # if the robot can move right, checks items to see if the robot should continue operating items to the right.
+            while self.can_move_right():
+                # robot will move right
+                self.move_right()
+                ## while checking to the right, it checks the item, if the robot can switch the item, it switches it.
+                if self.compare_item() == 1:
+                    # item gets swapped to the right
+                    self.swap_item()
+                    continue
+                ## if the item cannot be switched, this while loops terminates so that a different method can be run to check items to the left. 
+                else: 
+                    break
+           
+           # program will check if the robot can move to the left
+            while self.can_move_left():
+                # if the robot moves left, checks items to see if the robot should continue operating items to the left. 
+                self.move_left()
+                ## while checking to the left, it checks the item, if the robot can switch the item, it switches it.
+                if self.compare_item() == None:
+                    # item gets swapped to the left
+                    self.swap_item()
+                    # program will continue
+                    continue
+                else:
+                                    ## if the item cannot be switched, this while loops terminates so that a different method can be run to check items to the right.
+                    break
+        
+            ## if you cannot move to the right anymore, return the robot light's off
+            if not self.can_move_right():
+            ## when completely sorted, invoke self.light_is_off() to close the robot program
+                self.set_light_off()
+                break
+
+
+
+
+
+
+        # self._list = l          # The list the robot is tasked with sorting
+        # self._item = None       # The item the robot is holding
+        # self._position = 0      # The list position the robot is at
+        # self._light = "OFF"     # The state of the robot's light
+        # self._time = 0          # A time counter (stretch)
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
-
+   # l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    l = [5, 4, 3, 2, 1]
     robot = SortingRobot(l)
 
     robot.sort()
-    print(robot._list)
+    print(f'l: {l}')
+    # print(robot._list)
+
+

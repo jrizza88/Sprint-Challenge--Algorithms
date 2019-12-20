@@ -13,16 +13,14 @@ def count_th(word):
         return 0
 
     elif word[0] + word[1] == 'th':
-        print(f'number of times word has th: {1 + count_th(word[1:])} ')
         return 1 + count_th(word[1:])
     else: 
-        return count_th(word[1:])
+        return 0 + count_th(word[1:])
 
 
 
 
-# print(count_th(''))
-# print(count_th('th'))
+print(count_th(''))
 print(count_th('th'))
 print(count_th('thtjtjthth'))
 
